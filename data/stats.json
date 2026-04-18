@@ -1,10 +1,10 @@
 {
-  "xp": ,
-  "level": ,
+  "xp": 0,
+  "level": 0,
   "skills": {
-    "automation": ,
-    "python": ,
-    "ai": ,
-    "data": 
+    "automation": 0,
+    "python": 0,
+    "ai": 0,
+    "data": 0
   }
 }
