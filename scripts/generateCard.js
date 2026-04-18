@@ -1,7 +1,7 @@
 const fs = require("fs")
 
 const username = "Cuervo279"
-const avatar = `https://avatars.githubusercontent.com/${username}?s=120&v=${Date.now()}`
+const avatar = `https://avatars.githubusercontent.com/${username}?s=120`
 
 const stats = JSON.parse(fs.readFileSync("./data/stats.json"))
 
