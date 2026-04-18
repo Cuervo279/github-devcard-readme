@@ -29,13 +29,13 @@ const svg = `
 </defs>
 
 <!-- avatar -->
+
 <image
-  href="${avatar}"
   x="20"
   y="30"
   width="60"
   height="60"
-  mask="url(#avatarMask)"
+  xlink:href="https://avatars.githubusercontent.com/u/115048855?v=4"
 />
 
 <!-- name -->
