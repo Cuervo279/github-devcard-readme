@@ -17,13 +17,18 @@ jobs:
         with:
           node-version: 20
 
-      - run: node scripts/updateStats.js
-      - run: node scripts/generateCard.js
+      - name: Update Stats
+        run: node scripts/updateStats.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Card
+        run: node scripts/generateCard.js
 
       - name: Commit
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@github.com"
           git add .
-          git commit -m "update rpg stats"
+          git commit -m "update rpg stats" || echo "no changes"
           git push
