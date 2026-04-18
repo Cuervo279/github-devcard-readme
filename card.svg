@@ -21,13 +21,14 @@ height="180">
 </defs>
 
 <!-- avatar -->
+
 <image
 x="20"
 y="30"
 width="60"
 height="60"
 mask="url(#avatarMask)"
-xlink:href="https://avatars.githubusercontent.com/Cuervo279?s=120&v=1776518290763"
+xlink:href="https://avatars.githubusercontent.com/Cuervo279?s=120&v=1776519498762"
 />
 
 <!-- name -->
