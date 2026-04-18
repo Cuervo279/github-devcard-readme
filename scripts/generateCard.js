@@ -1,5 +1,8 @@
 const fs = require("fs")
 
+const username = "Cuervo279"
+const avatar = `https://avatars.githubusercontent.com/${username}`
+
 const stats = JSON.parse(fs.readFileSync("./data/stats.json"))
 
 const xpNeeded = (stats.level + 1) ** 2 * 100
@@ -18,7 +21,20 @@ const svg = `
 <rect width="100%" height="100%" rx="12" fill="#0d1117" stroke="#30363d"/>
 
 <!-- avatar -->
-<image href="https://github.com/Cuervo279.png" x="20" y="30" width="60" height="60" clip-path="circle(30px at 30px 30px)"/>
+<defs>
+<clipPath id="avatarClip">
+<circle cx="50" cy="60" r="30"/>
+</clipPath>
+</defs>
+
+<image
+href="${avatar}"
+x="20"
+y="30"
+width="60"
+height="60"
+clip-path="url(#avatarClip)"
+/>
 
 <!-- name -->
 <text x="100" y="45" class="title">Leonardo Cuervo</text>
