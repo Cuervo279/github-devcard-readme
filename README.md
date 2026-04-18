@@ -1,3 +1,3 @@
-## 🧙 Dev RPG
+## Dev RPG
 
 ![RPG Card](./card.svg)
