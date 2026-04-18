@@ -1,7 +1,7 @@
 const fs = require("fs")
 
 const username = "Cuervo279"
-const avatar = `https://avatars.githubusercontent.com/${username}`
+const avatar = `https://avatars.githubusercontent.com/${username}?s=120`
 
 const stats = JSON.parse(fs.readFileSync("./data/stats.json"))
 
@@ -20,20 +20,22 @@ const svg = `
 
 <rect width="100%" height="100%" rx="12" fill="#0d1117" stroke="#30363d"/>
 
-<!-- avatar -->
+<!-- avatar mask -->
 <defs>
-<clipPath id="avatarClip">
-<circle cx="50" cy="60" r="30"/>
-</clipPath>
+  <mask id="avatarMask">
+    <rect width="100%" height="100%" fill="black"/>
+    <circle cx="50" cy="60" r="30" fill="white"/>
+  </mask>
 </defs>
 
+<!-- avatar -->
 <image
-href="${avatar}"
-x="20"
-y="30"
-width="60"
-height="60"
-clip-path="url(#avatarClip)"
+  href="${avatar}"
+  x="20"
+  y="30"
+  width="60"
+  height="60"
+  mask="url(#avatarMask)"
 />
 
 <!-- name -->
