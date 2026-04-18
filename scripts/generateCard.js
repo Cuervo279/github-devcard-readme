@@ -10,7 +10,10 @@ const progress = Math.min(stats.xp / xpNeeded, 1)
 const barWidth = 220 * progress
 
 const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="180">
+<svg xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+width="420"
+height="180">
 
 <style>
 .title { font: bold 18px sans-serif; fill: #c9d1d9; }
@@ -29,13 +32,13 @@ const svg = `
 </defs>
 
 <!-- avatar -->
-
 <image
-  x="20"
-  y="30"
-  width="60"
-  height="60"
-  xlink:href="https://avatars.githubusercontent.com/u/115048855?v=4"
+x="20"
+y="30"
+width="60"
+height="60"
+mask="url(#avatarMask)"
+xlink:href="${avatar}"
 />
 
 <!-- name -->
