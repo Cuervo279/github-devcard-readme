@@ -2,21 +2,48 @@ const fs = require("fs")
 
 const stats = JSON.parse(fs.readFileSync("./data/stats.json"))
 
+const xpNeeded = (stats.level + 1) ** 2 * 100
+const progress = Math.min(stats.xp / xpNeeded, 1)
+const barWidth = 220 * progress
+
 const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
-  <rect width="100%" height="100%" fill="#0d1117"/>
-  
-  <text x="20" y="40" fill="white" font-size="20">
-    Leonardo Cuervo
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="180">
 
-  <text x="20" y="80" fill="white" font-size="16">
-    Level: ${stats.level}
-  </text>
+<style>
+.title { font: bold 18px sans-serif; fill: #c9d1d9; }
+.text { font: 14px sans-serif; fill: #8b949e; }
+.stat { font: bold 14px sans-serif; fill: #58a6ff; }
+</style>
 
-  <text x="20" y="110" fill="white" font-size="16">
-    XP: ${stats.xp}
-  </text>
+<rect width="100%" height="100%" rx="12" fill="#0d1117" stroke="#30363d"/>
+
+<!-- avatar -->
+<image href="https://github.com/Cuervo279.png" x="20" y="30" width="60" height="60" clip-path="circle(30px at 30px 30px)"/>
+
+<!-- name -->
+<text x="100" y="45" class="title">Leonardo Cuervo</text>
+
+<!-- level -->
+<text x="100" y="70" class="text">Level</text>
+<text x="150" y="70" class="stat">${stats.level}</text>
+
+<!-- xp text -->
+<text x="100" y="95" class="text">XP ${stats.xp} / ${xpNeeded}</text>
+
+<!-- xp bar background -->
+<rect x="100" y="105" width="220" height="10" rx="5" fill="#30363d"/>
+
+<!-- xp bar progress -->
+<rect x="100" y="105" width="${barWidth}" height="10" rx="5" fill="#58a6ff"/>
+
+<!-- rank -->
+<text x="20" y="140" class="text">🏆 Rank</text>
+<text x="80" y="140" class="stat">${stats.rank || "Unranked"}</text>
+
+<!-- main language -->
+<text x="220" y="140" class="text">💻 Main</text>
+<text x="280" y="140" class="stat">${stats.language || "JavaScript"}</text>
+
 </svg>
 `
 
