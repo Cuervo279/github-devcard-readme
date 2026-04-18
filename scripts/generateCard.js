@@ -39,7 +39,7 @@ y="30"
 width="60"
 height="60"
 mask="url(#avatarMask)"
-xlink:href="${avatar}"
+href="${avatar}"
 />
 
 <!-- name -->
