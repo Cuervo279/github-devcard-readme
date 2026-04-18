@@ -6,8 +6,6 @@ const avatar = "data:image/png;base64,/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw
 
 const stats = JSON.parse(fs.readFileSync("./data/stats.json"))
 
-// implantar logica de rank <text x="80" y="140" class="stat">${stats.rank || "Unranked"}</text>
-
 const xpNeeded = (stats.level + 1) ** 2 * 100
 const progress = Math.min(stats.xp / xpNeeded, 1)
 const barWidth = 220 * progress
@@ -63,7 +61,7 @@ href="${avatar}"
 
 <!-- rank -->
 <text x="20" y="140" class="text">🏆 Rank</text>
-<text x="80" y="140" class="stat">33.279</text>
+<text x="80" y="140" class="stat">${stats.rank || "33.279"}</text>
 
 <!-- main language -->
 <text x="220" y="140" class="text">💻 Main</text>
