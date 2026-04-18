@@ -1,7 +1,5 @@
 ## Dev card README.md
 
-![RPG Card](./card.svg)
-
 Um experimento simples para gerar **cards dinâmicos para README do GitHub usando SVG**.
 
 A ideia do projeto foi explorar como é possível criar **componentes visuais dinâmicos dentro do README**, atualizados automaticamente com dados da API do GitHub.
