@@ -61,7 +61,7 @@ href="${avatar}"
 
 <!-- rank -->
 <text x="20" y="140" class="text">🏆 Rank</text>
-//<text x="80" y="140" class="stat">${stats.rank || "Unranked"}</text> - implantar logica
+<!-- <text x="80" y="140" class="stat">${stats.rank || "Unranked"}</text> - implantar logica -->
 <text x="80" y="140" class="stat">33.279</text>
 
 <!-- main language -->
