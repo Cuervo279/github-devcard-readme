@@ -1,6 +1,9 @@
 name: Update RPG
 
 on:
+  push:
+    branches:
+      - main        # Adicione isso para rodar no commit
   workflow_dispatch:
   schedule:
     - cron: "0 3 * * *"
@@ -30,8 +33,9 @@ jobs:
 
       - name: Commit
         run: |
-          git config --global user.name "bot"
-          git config --global user.email "bot@github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "update rpg stats" || echo "no changes"
+          # O [skip ci] evita que o commit do próprio bot dispare o workflow de novo
+          git commit -m "update rpg stats [skip ci]" || echo "no changes"
           git push
