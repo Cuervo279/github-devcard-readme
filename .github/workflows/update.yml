@@ -15,10 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 22
 
       - name: Update Stats
         run: node scripts/updateStats.js
@@ -30,8 +30,8 @@ jobs:
 
       - name: Commit
         run: |
-          git config --global user.name "bot"
-          git config --global user.email "bot@github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@github.com"
           git add .
           git commit -m "update rpg stats" || echo "no changes"
           git push
